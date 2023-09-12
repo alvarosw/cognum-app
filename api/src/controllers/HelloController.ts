@@ -5,7 +5,6 @@ import { route, GET } from 'awilix-express';
 export default class HelloController {
   @GET()
   async getHello(_: Request, res: Response) {
-    console.log('bateu no endpoint');
     return res.send({ message: "Hello, Cognum!" });
   }
 }
