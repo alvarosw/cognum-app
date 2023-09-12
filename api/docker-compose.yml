@@ -1,0 +1,26 @@
+version: '3'
+services:
+  database:
+    image: mongo:latest
+    container_name: cognum-api-database
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  cognum-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cognum-api-app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - database
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/cognum
+    volumes:
+      - ./app:/app
+
+volumes:
+  mongodb_data:
