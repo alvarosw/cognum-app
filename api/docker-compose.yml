@@ -3,6 +3,9 @@ services:
   database:
     image: mongo:latest
     container_name: cognum-api-database
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=pass
     ports:
       - "27017:27017"
     volumes:
