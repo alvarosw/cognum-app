@@ -3,7 +3,7 @@ import { Employee, PrismaClient } from '@prisma/client';
 export default class EmployeeService {
   employeeRepo;
   constructor(prisma: PrismaClient) {
-    this.employeeRepo = prisma?.employee;
+    this.employeeRepo = prisma.employee;
   }
 
   async getEmployees() {
