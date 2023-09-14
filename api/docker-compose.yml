@@ -1,7 +1,7 @@
 version: '3'
 services:
   database:
-    image: mongo:latest
+    image: prismagraphql/mongo-single-replica:5.0.3
     container_name: cognum-api-database
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
