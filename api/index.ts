@@ -4,6 +4,7 @@ import * as containerConfig from './container';
 const server = express();
 
 server.use(
+  express.json(),
   containerConfig.dependencyInjectionRequestScope,
   containerConfig.controllerLoading
 );
