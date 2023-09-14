@@ -28,7 +28,8 @@ export default class HelloController {
         .error(new UnprocessableEntity('Property "name" is required and must be string.')),
       email: joi.string()
         .required()
-        .error(new UnprocessableEntity('Property "email" is required and must be string.')),
+        .email()
+        .error(new UnprocessableEntity('Property "email" is required and must be a valid email.')),
       role: joi.string()
         .valid(...Object.values(EmployeeRole))
         .required()
