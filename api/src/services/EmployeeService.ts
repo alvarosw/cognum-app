@@ -25,4 +25,8 @@ export default class EmployeeService {
   async deleteEmployee(id: string) {
     return this.employeeRepo.delete({ where: { id } });
   }
+
+  async saveBatch(employees: Omit<Employee, 'id'>[]) {
+    return this.employeeRepo.createMany({ data: employees });
+  }
 }
