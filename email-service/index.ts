@@ -1,11 +1,12 @@
 import express from 'express';
+import * as containerConfig from './container';
 
 const server = express();
-server.use(express.json());
-
-server.post('/webhook', (req: any, res: any) => {
-  return res.send('Hello, world!');
-});
+server.use(
+  express.json(),
+  containerConfig.dependencyInjectionRequestScope,
+  containerConfig.controllerLoading
+);
 
 const port = 3333;
 server.listen(port, () => {
