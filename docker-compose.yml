@@ -1,0 +1,51 @@
+version: '3'
+services:
+  database:
+    image: prismagraphql/mongo-single-replica:5.0.3
+    container_name: cognum-database
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  cognum-api:
+    build:
+      context: ./api
+    container_name: cognum-api-app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - database
+    volumes:
+      - app_data:/data/api
+
+  cognum-email-service:
+    build:
+      context: ./email-service
+    container_name: cognum-email-service-app
+    ports:
+      - "3334:3333"
+      - "3335:3333"
+      - "3336:3333"
+    depends_on:
+      - database
+    volumes:
+      - app_data:/app/data/email-service
+
+  cognum-lb-gateway:
+    build:
+      context: ./email-service/gateway
+    container_name: cognum-lb-gateway-app
+    ports:
+      - "3333:80"
+    depends_on:
+      - cognum-email-service
+    volumes:
+      - app_data:/app/data/lb-gateway
+
+volumes:
+  app_data:
+  mongodb_data:
