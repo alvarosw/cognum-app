@@ -13,7 +13,8 @@ const prisma = new PrismaClient();
 
 container.register({
   prisma: asValue(prisma),
-  contactService: asClass(ContactService)
+  contactService: asClass(ContactService),
+  emailService: asClass(EmailService),
 });
 
 export const dependencyInjectionRequestScope = scopePerRequest(container);
