@@ -17,4 +17,12 @@ export default class ContactService {
   async listContacts() {
     return this.contactRepo.findMany();
   }
+
+  async getContactsByEmails(emails: string[]) {
+    return this.contactRepo.findMany({
+      where: {
+        email: { in: emails }
+      }
+    });
+  }
 }
