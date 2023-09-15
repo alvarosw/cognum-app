@@ -12,7 +12,7 @@ export default class EmailController {
   }
 
   @POST()
-  @route('/send')
+  @route('/send-notification')
   async sendEmail(req: Request, res: Response) {
     try {
       const payload = await joi.object({
