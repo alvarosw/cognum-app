@@ -56,6 +56,7 @@ export default class HelloController {
 
       return res.status(201).send(result);
     } catch (error) {
+      console.error(error);
       if (error instanceof HttpException)
         return res.status(error.statusCode).send({ message: error.message });
       return res.status(500).send({ message: 'Something went wrong. Try again later.' });
@@ -67,6 +68,7 @@ export default class HelloController {
     try {
       return res.send(await this.employeeService.getEmployees());
     } catch (error) {
+      console.error(error);
       if (error instanceof HttpException)
         return res.status(error.statusCode).send({ message: error.message });
       return res.status(500).send({ message: 'Something went wrong. Try again later.' });
@@ -80,6 +82,7 @@ export default class HelloController {
       const { id } = req.params;
       return res.send(await this.employeeService.getEmployeeById(id));
     } catch (error) {
+      console.error(error);
       if (error instanceof HttpException)
         return res.status(error.statusCode).send({ message: error.message });
       return res.status(500).send({ message: 'Something went wrong. Try again later.' });
@@ -96,6 +99,7 @@ export default class HelloController {
 
       return res.status(201).send(result);
     } catch (error) {
+      console.error(error);
       if (error instanceof HttpException)
         return res.status(error.statusCode).send({ message: error.message });
       return res.status(500).send({ message: 'Something went wrong. Try again later.' });
@@ -114,6 +118,7 @@ export default class HelloController {
 
       return res.send(result);
     } catch (error) {
+      console.error(error);
       if (error instanceof HttpException)
         return res.status(error.statusCode).send({ message: error.message });
       return res.status(500).send({ message: 'Something went wrong. Try again later.' });
@@ -127,6 +132,7 @@ export default class HelloController {
       const { id } = req.params;
       return res.send(await this.employeeService.deleteEmployee(id));
     } catch (error) {
+      console.error(error);
       if (error instanceof HttpException)
         return res.status(error.statusCode).send({ message: error.message });
       return res.status(500).send({ message: 'Something went wrong. Try again later.' });

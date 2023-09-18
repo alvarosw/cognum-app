@@ -6,7 +6,7 @@ export default class WebhookService {
   apiInstance: AxiosInstance;
 
   constructor() {
-    this.apiInstance = axios.create({ baseURL: 'http://localhost:3333/' });
+    this.apiInstance = axios.create({ baseURL: 'http://email-service:3333/' });
   }
 
   async postEmployee(data: EmployeeContact | EmployeeContact[]) {
