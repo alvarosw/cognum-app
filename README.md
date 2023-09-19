@@ -40,6 +40,8 @@ The following technologies are used in this project:
 - Express: HTTP Server middleware framework
 - Awilix: Dependency injection
 - MongoDB: NoSQL database
+- Prometheus: App Metrics monitoring
+- Redis: Caching
 
 ## License
 
