@@ -22,7 +22,6 @@ export default (
   const start = Date.now();
 
   res.on('finish', () => {
-    console.log('finishou');
     const end = Date.now();
     const elapsed = end - start;
 
