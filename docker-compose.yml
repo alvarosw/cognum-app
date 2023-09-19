@@ -55,5 +55,13 @@ services:
     networks:
       - local
 
+  redis:
+    image: redis
+    container_name: cognum-email-service-redis
+    ports:
+      - '6379:6379'
+    networks:
+      - local
+
 networks:
   local:
