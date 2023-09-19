@@ -118,6 +118,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-If you have any questions or need further assistance, feel free to contact us at [alvarossmiguel@gmail.com](mailto:alvarossmiguel@gmail.com).
+If you have any questions or need further assistance, feel free to contact me at [alvarossmiguel@gmail.com](mailto:alvarossmiguel@gmail.com).
 
 Happy coding!
