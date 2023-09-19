@@ -32,6 +32,10 @@ Follow these steps to get the Cognum App up and running on your local machine:
 
 4. Access the Cognum API in your client at [http://localhost:3000](http://localhost:3000).
 
+5. Access the Email Service in your client at [http://localhost:3333](http://localhost:3333).
+
+6. Access the Prometheus Dashboard in your client at [http://localhost:9090](http://localhost:9090).
+
 ## Dependencies
 
 The following technologies are used in this project:
@@ -40,6 +44,7 @@ The following technologies are used in this project:
 - Express: HTTP Server middleware framework
 - Awilix: Dependency injection
 - MongoDB: NoSQL database
+- NGINX: Load balancer gateway
 - Prometheus: App Metrics monitoring
 - Redis: Caching
 
