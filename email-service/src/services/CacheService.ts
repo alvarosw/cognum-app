@@ -3,7 +3,7 @@ import { RedisClientType, createClient } from 'redis';
 export default class CacheService {
   client: RedisClientType;
   constructor() {
-    this.client = createClient();
+    this.client = createClient({ url: 'redis://redis:6379' });
   }
 
   private async prepare() {
