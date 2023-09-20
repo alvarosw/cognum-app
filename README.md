@@ -13,7 +13,7 @@ Follow these steps to get the Cognum App up and running on your local machine:
 1. Clone the project repository to your local machine:
 
    ```shell
-   git clone https://github.com/your-username/cognum-app.git
+   git clone https://github.com/alvarosw/cognum-app.git
    ```
 
 2. Navigate to the project directory:
